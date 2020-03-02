@@ -32,7 +32,7 @@ try{
         grant_type="client_credentials"
     }
 
-    $response = Invoke-WebRequest -Uri "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token" -ContentType "application/x-www-form-urlencoded" -Body $body -Method Post -UseBasicParsing
+    $response = Invoke-WebRequest -Uri "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token" -ContentType "application/x-www-form-urlencoded" -Body $body -Method Post
 
     $accessToken=$response.content | ConvertFrom-Json
     $AppAccessToken = $accessToken.access_token
@@ -65,7 +65,7 @@ try{
         scope="https://graph.microsoft.com/.default"
     }
 
-    $response = Invoke-WebRequest -Uri "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token" -ContentType "application/x-www-form-urlencoded" -Body $body -Method Post -UseBasicParsing
+    $response = Invoke-WebRequest -Uri "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token" -ContentType "application/x-www-form-urlencoded" -Body $body -Method Post
 
     $accessToken=$response.content | ConvertFrom-Json
     $UserAccessToken = $accessToken.access_token
